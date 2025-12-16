@@ -1,63 +1,112 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Details</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="project-details.css">
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/talatk/data-analyst-favicon/main/favicon.png">
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/talatk/data-analyst-favicon/main/favicon.png">
 </head>
+
 <body class="bg-[#06202B] text-[#F5EEDD] antialiased font-sans">
-    
-    <header class="sticky top-0 z-50 bg-[#06202B]/80 backdrop-blur-sm">
-        <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-            <h1 class="text-3xl font-extrabold text-[#F5EEDD]">
+
+    <header class="sticky top-0 z-50 bg-[#06202B]/95 backdrop-blur-md shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center py-4 px-4 sm:px-6">
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-[#F5EEDD]">
                 <a href="index.html">Portfolio</a>
             </h1>
-            <ul class="flex space-x-6 text-lg font-medium">
-                <li><a href="index.html#about" class="hover:text-[#7AE2CF] transition-colors duration-300">About Me</a></li>
-                <li><a href="index.html#projects" class="hover:text-[#7AE2CF] transition-colors duration-300">Projects</a></li>
-                <li><a href="index.html#skills" class="hover:text-[#7AE2CF] transition-colors duration-300">Skills</a></li>
-                <li><a href="index.html#education" class="hover:text-[#7AE2CF] transition-colors duration-300">Education</a></li>
-                <li><a href="index.html#contact" class="hover:text-[#7AE2CF] transition-colors duration-300">Contact</a></li>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-[#F5EEDD] focus:outline-none z-50">
+                <svg id="menu-open-icon" class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg id="menu-close-icon" class="h-8 w-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex space-x-6 text-lg font-medium">
+                <li><a href="index.html#about" class="hover:text-[#7AE2CF] transition-colors duration-300">About Me</a>
+                </li>
+                <li><a href="index.html#projects"
+                        class="hover:text-[#7AE2CF] transition-colors duration-300">Projects</a></li>
+                <li><a href="index.html#skills" class="hover:text-[#7AE2CF] transition-colors duration-300">Skills</a>
+                </li>
+                <li><a href="index.html#education"
+                        class="hover:text-[#7AE2CF] transition-colors duration-300">Education</a></li>
+                <li><a href="index.html#contact" class="hover:text-[#7AE2CF] transition-colors duration-300">Contact</a>
+                </li>
             </ul>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="fixed top-0 right-0 h-full w-64 bg-[#06202B] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-2xl">
+                <ul class="flex flex-col space-y-6 text-lg font-medium pt-20 px-8">
+                    <li><a href="index.html#about"
+                            class="mobile-menu-link block hover:text-[#7AE2CF] transition-colors duration-300">About
+                            Me</a></li>
+                    <li><a href="index.html#projects"
+                            class="mobile-menu-link block hover:text-[#7AE2CF] transition-colors duration-300">Projects</a>
+                    </li>
+                    <li><a href="index.html#skills"
+                            class="mobile-menu-link block hover:text-[#7AE2CF] transition-colors duration-300">Skills</a>
+                    </li>
+                    <li><a href="index.html#education"
+                            class="mobile-menu-link block hover:text-[#7AE2CF] transition-colors duration-300">Education</a>
+                    </li>
+                    <li><a href="index.html#contact"
+                            class="mobile-menu-link block hover:text-[#7AE2CF] transition-colors duration-300">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <main class="container mx-auto py-20 px-6">
-        <section id="project-details-section" class="bg-[#077A7D] rounded-lg p-8 shadow-xl animate-fade-in">
-            <a href="index.html#projects" class="text-[#7AE2CF] hover:text-[#F5EEDD] transition-colors mb-4 inline-block font-semibold">&larr; Back to Projects</a>
-            
-            <img id="project-image" src="" alt="Project Image" class="rounded-lg mb-6 w-full object-cover">
-            <h1 id="project-title" class="text-4xl md:text-5xl font-bold mb-4 text-[#F5EEDD]"></h1>
-            
-            <p id="project-description" class="text-[#F5EEDD]/80 text-justify mb-4"></p>
-            
-            <div id="secondary-images-container" class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-                </div>
+    <main class="container mx-auto py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+        <section id="project-details-section"
+            class="bg-[#077A7D] rounded-lg p-5 sm:p-6 lg:p-8 shadow-xl animate-fade-in">
+            <a href="index.html#projects"
+                class="text-[#7AE2CF] hover:text-[#F5EEDD] transition-colors mb-4 inline-block font-semibold text-sm sm:text-base">&larr;
+                Back to Projects</a>
 
-            <div id="tools-section" class="mt-8">
-                <h2 class="text-2xl font-bold mb-4 text-[#F5EEDD]">Tools Used</h2>
-                <div id="project-tools" class="flex flex-wrap gap-2">
-                    </div>
+            <img id="project-image" src="" alt="Project Image" class="rounded-lg mb-4 sm:mb-6 w-full object-cover">
+            <h1 id="project-title" class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 text-[#F5EEDD]">
+            </h1>
+
+            <p id="project-description" class="text-sm sm:text-base text-[#F5EEDD]/80 text-justify mb-4"></p>
+
+            <div id="secondary-images-container"
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mt-6 sm:mt-8">
             </div>
-            
-            <div id="video-container" class="mt-8">
+
+            <div id="tools-section" class="mt-6 sm:mt-8">
+                <h2 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#F5EEDD]">Tools Used</h2>
+                <div id="project-tools" class="flex flex-wrap gap-2">
+                </div>
+            </div>
+
+            <div id="video-container" class="mt-6 sm:mt-8">
                 <video id="project-video" class="w-full aspect-video rounded-lg" controls>
                     Your browser does not support the video tag.
                 </video>
             </div>
-            
-            <div id="project-buttons" class="mt-8 flex flex-wrap gap-4">
-                </div>
+
+            <div id="project-buttons" class="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
+            </div>
         </section>
     </main>
 
     <div id="tool-modal" class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 hidden">
         <div class="bg-[#077A7D] p-8 rounded-lg shadow-2xl max-w-lg w-11/12 animate-fade-in-up relative">
-            <button id="close-modal" class="absolute top-4 right-4 text-[#F5EEDD] hover:text-white transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button id="close-modal"
+                class="absolute top-4 right-4 text-[#F5EEDD] hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
@@ -65,12 +114,46 @@
             <p id="modal-description" class="text-[#F5EEDD] text-lg"></p>
         </div>
     </div>
-    
-    <footer class="text-[#F5EEDD]/80 text-center py-8">
-        <p>All Rights Reserved © 2024 Kareem Elrawady</p>
+
+    <footer class="text-[#F5EEDD]/80 text-center py-6 sm:py-8 px-4">
+        <p class="text-sm sm:text-base">All Rights Reserved © 2024 Kareem Elrawady</p>
     </footer>
 
     <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('translate-x-full');
+                menuOpenIcon.classList.toggle('hidden');
+                menuCloseIcon.classList.toggle('hidden');
+            });
+
+            // Close menu when clicking on a link
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    menuOpenIcon.classList.remove('hidden');
+                    menuCloseIcon.classList.add('hidden');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    mobileMenu.classList.add('translate-x-full');
+                    menuOpenIcon.classList.remove('hidden');
+                    menuCloseIcon.classList.add('hidden');
+                }
+            });
+        }
+
+        // Project details functionality
         const projects = {
             "HR": {
                 title: "Human Resources Performance Analysis",
@@ -172,10 +255,10 @@
                 } else {
                     document.getElementById('video-container').style.display = 'none';
                 }
-                
+
                 const projectButtonsContainer = document.getElementById('project-buttons');
                 projectButtonsContainer.innerHTML = '';
-                
+
                 if (project.githubLink) {
                     const githubButton = document.createElement('a');
                     githubButton.href = project.githubLink;
@@ -219,4 +302,5 @@
         window.onload = loadProjectDetails;
     </script>
 </body>
+
 </html>
