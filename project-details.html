@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="project-details.css">
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/talatk/data-analyst-favicon/main/favicon.png">
+</head>
+
+<body class="bg-[#06202B] text-[#F5EEDD] antialiased font-sans">
+
+    <header class="sticky top-0 z-50 bg-[#06202B]/95 backdrop-blur-md shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center py-4 px-4 sm:px-6">
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-[#F5EEDD]">
+                <a href="index.html">Portfolio</a>
+            </h1>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-[#F5EEDD] focus:outline-none z-50">
+                <svg id="menu-open-icon" class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg id="menu-close-icon" class="h-8 w-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <ul class="hidden lg:flex space-x-6 text-lg font-medium">
+                <li><a href="index.html#about" class="hover:text-[#7AE2CF] transition-colors duration-300">About Me</a>
+                </li>
+                <li><a href="index.html#projects"
+                        class="hover:text-[#7AE2CF] transition-colors duration-300">Projects</a></li>
+                <li><a href="index.html#skills" class="hover:text-[#7AE2CF] transition-colors duration-300">Skills</a>
+                </li>
+                <li><a href="index.html#education"
+                        class="hover:text-[#7AE2CF] transition-colors duration-300">Education</a></li>
+                <li><a href="index.html#contact" class="hover:text-[#7AE2CF] transition-colors duration-300">Contact</a>
+                </li>
+            </ul>
+
+            <div id="mobile-menu"
+                class="fixed top-0 right-0 h-full w-64 bg-[#06202B] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-2xl">
+                <ul class="flex flex-col space-y-6 text-lg font-medium pt-20 px-8">
+                    <li><a href="index.html#about"
+                            class="mobile-menu-link block hover:text-[#7AE2CF] transition-colors duration-300">About
+                            Me</a></li>
+                    <li><a href="index.html#projects"
+                            class="mobile-menu-link block hover:text-[#7AE2CF] transition-colors duration-300">Projects</a>
+                    </li>
+                    <li><a href="index.html#skills"
+                            class="mobile-menu-link block hover:text-[#7AE2CF] transition-colors duration-300">Skills</a>
+                    </li>
+                    <li><a href="index.html#education"
+                            class="mobile-menu-link block hover:text-[#7AE2CF] transition-colors duration-300">Education</a>
+                    </li>
+                    <li><a href="index.html#contact"
+                            class="mobile-menu-link block hover:text-[#7AE2CF] transition-colors duration-300">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+        <section id="project-details-section"
+            class="bg-[#077A7D] rounded-lg p-5 sm:p-6 lg:p-8 shadow-xl animate-fade-in">
+            <a href="index.html#projects"
+                class="text-[#7AE2CF] hover:text-[#F5EEDD] transition-colors mb-4 inline-block font-semibold text-sm sm:text-base">&larr;
+                Back to Projects</a>
+
+            <img id="project-image" src="" alt="Project Image" class="rounded-lg mb-4 sm:mb-6 w-full object-cover">
+            <h1 id="project-title" class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 text-[#F5EEDD]">
+            </h1>
+
+            <p id="project-description" class="text-sm sm:text-base text-[#F5EEDD]/80 text-justify mb-4"></p>
+
+            <div id="secondary-images-container"
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mt-6 sm:mt-8">
+            </div>
+
+            <div id="tools-section" class="mt-6 sm:mt-8">
+                <h2 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#F5EEDD]">Tools Used</h2>
+                <div id="project-tools" class="flex flex-wrap gap-2">
+                </div>
+            </div>
+
+            <div id="video-container" class="mt-6 sm:mt-8">
+                <video id="project-video" class="w-full aspect-video rounded-lg" controls>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div id="project-buttons" class="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
+            </div>
+        </section>
+    </main>
+
+    <div id="tool-modal" class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 hidden">
+        <div class="bg-[#077A7D] p-8 rounded-lg shadow-2xl max-w-lg w-11/12 animate-fade-in-up relative">
+            <button id="close-modal"
+                class="absolute top-4 right-4 text-[#F5EEDD] hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 id="modal-title" class="text-3xl font-bold mb-4 text-[#7AE2CF]"></h3>
+            <p id="modal-description" class="text-[#F5EEDD] text-lg"></p>
+        </div>
+    </div>
+
+    <footer class="text-[#F5EEDD]/80 text-center py-6 sm:py-8 px-4">
+        <p class="text-sm sm:text-base">All Rights Reserved © 2024 Kareem Elrawady</p>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('translate-x-full');
+                menuOpenIcon.classList.toggle('hidden');
+                menuCloseIcon.classList.toggle('hidden');
+            });
+
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    menuOpenIcon.classList.remove('hidden');
+                    menuCloseIcon.classList.add('hidden');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    mobileMenu.classList.add('translate-x-full');
+                    menuOpenIcon.classList.remove('hidden');
+                    menuCloseIcon.classList.add('hidden');
+                }
+            });
+        }
+
+        const projects = {
+            "Uber": {
+                title: "Uber Trips Dashboard",
+                description: "The primary goal of this dashboard is to transform raw Uber trip data into actionable business intelligence. It focuses on several core metrics, including: Trip Analysis: Tracking total distances traveled and trip durations. Financial Performance: Visualizing revenue or sales trends to understand earning patterns. Fleet Categorization: Segmenting trips by vehicle types, such as Sedan and SUV.",
+                tools: [
+                    { name: "Power BI", description: "Power BI is a cloud-based business analytics service by Microsoft that transforms raw data into immersive, interactive visualizations and actionable insights." },
+                    { name: "DAX", description: "DAX (Data Analysis Expressions) is a formula language used in Power BI, Analysis Services, and Excel to create custom calculations through functions, operators, and constants." }
+                ],
+                image: "Projects/Uber/1.JPG",
+                secondaryImages: [
+                    "Projects/Uber/2.JPG",
+                    "Projects/Uber/3.JPG",
+                    "Projects/Uber/8.JPG",
+                    "Projects/Uber/9.JPG",
+                    "Projects/Uber/7.JPG",
+                    "Projects/Uber/10.JPG",
+                    "Projects/Uber/13.JPG",
+                    "Projects/Uber/14.JPG"
+                ],
+                // video: "Projects/HR Project/HR Analystics By Eng Kareem Elrawady .xlsx - Excel 2025-10-07 18-34-41.mp4",
+                githubLink: "https://github.com/2002kareem/Uber.git"
+            },
+            "HR": {
+                title: "Human Resources Performance Analysis",
+                description: "A comprehensive project to analyze a human resources data using Excel and the Pivot Table.",
+                tools: [
+                    { name: "Excel", description: "A powerful spreadsheet software for organizing, calculating, and analyzing data using formulas and functions." },
+                    { name: "Pivot Table", description: "A data summarization tool within Excel that quickly reorganizes and aggregates data to help users analyze large datasets and identify patterns." },
+                    { name: "Dashboard", description: "A visual representation of key performance indicators (KPIs) and data, often created in Excel using charts, graphs, and tables linked to underlying data, providing a quick overview for monitoring and decision-making." },
+                ],
+                image: "Projects/HR Project/Dashbord.JPG",
+                secondaryImages: [
+                    "Projects/HR Project/1.JPG",
+                    "Projects/HR Project/2.JPG",
+                    "Projects/HR Project/3.JPG"
+                ],
+                // video: "Projects/HR Project/HR Analystics By Eng Kareem Elrawady .xlsx - Excel 2025-10-07 18-34-41.mp4",
+                githubLink: "https://github.com/2002kareem/HR-Data-Analytics"
+            },
+            "Vrinda Store": {
+                title: "Vrinda Store Data Analysis",
+                description: "constructing dynamic PivotTables to facilitate insightful pattern discovery.<Br>This dashboard provides a deep understanding of sales performance, enabling users to track:<Br>Monthly sales and order trends.<Br>Sales analysis by gender and age group.<Br>Identification of top-performing sales channels.<Br>Key geographical areas for sales.<Br>Order status and distribution.<Br>This project showcases my ability to transform raw data into actionable insights that support data-driven decision-making and optimize business strategies.<Br>increased customer retention by 18%.",
+                tools: [
+                    { name: "Excel", description: "A powerful spreadsheet software for organizing, calculating, and analyzing data using formulas and functions." },
+                    { name: "Pivot Table", description: "A data summarization tool within Excel that quickly reorganizes and aggregates data to help users analyze large datasets and identify patterns." },
+                    { name: "Dashboard", description: "A visual representation of key performance indicators (KPIs) and data, often created in Excel using charts, graphs, and tables linked to underlying data, providing a quick overview for monitoring and decision-making." },
+                ],
+                image: "Projects/Vrinda Store Data Analysis/Dashboard.JPG",
+                secondaryImages: [
+                    "Projects/Vrinda Store Data Analysis/1.JPG",
+                    "Projects/Vrinda Store Data Analysis/2.JPG",
+                    "Projects/Vrinda Store Data Analysis/3.JPG"
+                ],
+                // video: "Projects/Vrinda Store Data Analysis/Vrinda Store Data Analysis (kareem ibrahim ibrahim eldesoky elrawady).xlsx - Excel 2025-10-07 16-06-24.mp4",
+                githubLink: "https://github.com/2002kareem/Vrinda-Store.git"
+            },
+            "Manufactring": {
+                title: "Manufactring Downtime (SQL Project)",
+                description: "Used SQL (joins . Aggregation Functions , Window Functions ) .This project analyzes 2024 manufacturing downtime by aggregating duration and frequency across months, shifts, and departments using relational SQL joins.It evaluates manufacturer reliability and operator performance by distinguishing between planned maintenance and unplanned failures.",
+                tools: [
+                    { name: "SQL", description: "A standardized programming language used to manage, query, and manipulate data within relational databases." },
+                    { name: "Aggregation Functions", description: "Mathematical operations, such as SUM, AVG, or COUNT, that process multiple values to return a single summary result." },
+                    { name: "Joins", description: "SQL clauses used to combine rows from two or more tables based on a related column between them." },
+                    { name: "Window Functions", description: "Specialized SQL functions that perform calculations across a set of table rows related to the current row without collapsing them into a single output." },
+                ],
+                image: "Projects/SQL Project/6.jpeg",
+                secondaryImages: [
+                    "Projects/SQL Project/7.jpeg",
+                    "Projects/SQL Project/8.jpeg",
+                    "Projects/SQL Project/9.jpeg",
+                    "Projects/SQL Project/10.jpeg",
+                    "Projects/SQL Project/11.jpeg",
+                    "Projects/SQL Project/12.jpeg",
+                    "Projects/SQL Project/13.jpeg",
+                    "Projects/SQL Project/14.jpeg",
+                    "Projects/SQL Project/15.jpeg",
+                    "Projects/SQL Project/16.jpeg",
+                    "Projects/SQL Project/17.jpeg",
+                    "Projects/SQL Project/18.jpeg",
+                    "Projects/SQL Project/19.jpeg",
+                    "Projects/SQL Project/20.jpeg",
+                    
+                ],
+                // video: "Projects/Vrinda Store Data Analysis/Vrinda Store Data Analysis (kareem ibrahim ibrahim eldesoky elrawady).xlsx - Excel 2025-10-07 16-06-24.mp4",
+                githubLink: "https://github.com/2002kareem/Manufacturing-Resources-Data-Set.git"
+            },
+            "Airline": {
+                title: "Airline (Python Project)",
+                description: "This project performs an exploratory data analysis (EDA) on airline flight data to understand the factors influencing ticket prices and flight frequencies. Using Python libraries like Pandas, Matplotlib, and Seaborn.Key insights include identifying the most expensive and longest flights, calculating mean prices across different airlines and routes, and visualizing how booking lead time impacts the final ticket cost.",
+                tools: [
+                    { name: "Python", description: "A versatile, high-level programming language known for its clear syntax and widespread use in web development, automation, and data science." },
+                    { name: "Numpy", description: "The fundamental package for scientific computing in Python, providing support for large, multi-dimensional arrays and high-level mathematical functions." },
+                    { name: "Pandas", description: "A powerful data analysis and manipulation library that offers flexible data structures like DataFrames to work with structured, tabular data." },
+                    { name: "Seaborn", description: "A statistical data visualization library built on top of Matplotlib that provides a high-level interface for drawing attractive and informative graphs." }
+                ],
+                image: "Projects/Airline/11.JPG",
+                secondaryImages: [
+                    "Projects/Airline/1.JPG",
+                    "Projects/Airline/2.JPG",
+                    "Projects/Airline/3.JPG",
+                    "Projects/Airline/4.JPG",
+                    "Projects/Airline/5.JPG",
+                    "Projects/Airline/6.JPG",
+                    "Projects/Airline/7.JPG",
+                    "Projects/Airline/8.JPG",
+                    "Projects/Airline/9.JPG",
+                    "Projects/Airline/10.JPG",
+                    "Projects/Airline/66.JPG",
+                    "Projects/Airline/12.JPG",
+                    "Projects/Airline/13.JPG",
+                    "Projects/Airline/14.JPG",
+                    "Projects/Airline/15.JPG",
+                    "Projects/Airline/16.JPG",
+                    "Projects/Airline/17.JPG",
+                    "Projects/Airline/33.JPG",
+                    
+                ],
+                // video: "Projects/Vrinda Store Data Analysis/Vrinda Store Data Analysis (kareem ibrahim ibrahim eldesoky elrawady).xlsx - Excel 2025-10-07 16-06-24.mp4",
+                githubLink: "https://github.com/2002kareem/Airlines_flights_data.git"
+            },
+            "ASCES": {
+                title: "Product Analytics Dashboard",
+                description: "This Power BI project, Product Analytics, focuses on tracking business performance through key metrics like profit and growth. It features a professional UI using custom themes and transparent branding assets. The development involved data modeling and advanced calculations using the DAX language to generate actionable insights. Key features include interactive report layouts, secure data bindings, and specialized static resources for high-fidelity data storytelling.",
+                tools: [
+                    { name: "Power BI", description: "Power BI is a cloud-based business analytics service by Microsoft that transforms raw data into immersive, interactive visualizations and actionable insights." },
+                    { name: "DAX", description: "DAX (Data Analysis Expressions) is a formula language used in Power BI, Analysis Services, and Excel to create custom calculations through functions, operators, and constants." }
+                ],
+                image: "Projects/Product Analytics Dashboard/Main Dashboard.JPG",
+                secondaryImages: [
+                    "Projects/Product Analytics Dashboard/Main Dashboard.JPG",
+                    "Projects/Product Analytics Dashboard/SQL Query.JPG",
+                    "Projects/Product Analytics Dashboard/Tooltip.JPG",
+                    "Projects/Product Analytics Dashboard/DAX Function.JPG"
+                ],
+                // video: "Projects/Vrinda Store Data Analysis/Vrinda Store Data Analysis (kareem ibrahim ibrahim eldesoky elrawady).xlsx - Excel 2025-10-07 16-06-24.mp4",
+                githubLink: "https://github.com/2002kareem/Product-Analytics-Dashboard.git"
+            },
+            "Telo Churn": {
+                title: "Telo Churn Project",
+                description: "I used Power BI , Python , Power Query and SQL in SSMS to transform raw data into critical business insights, focusing on the main drivers of customer attrition:<Br>Segmenting by Tenure and Contract: I calculated the churn rate across different customer segments, including identifying the high-risk group of month-to-month contracts and customers with short tenures (0-6 months).<Br>Service & Demographic Impact: I analyzed how services (like Fiber Optic, Online Security) and customer demographics (Senior Citizen status, Payment Method) correlate with churn to build a complete profile of a churning customer. <Br>Results:<Br> The project successfully identified that month-to-month contracts and Fiber Optic users are the primary churn drivers, quantifying the total revenue lost and providing actionable strategies for retention.",
+                tools: [
+                    { name: "SQL", description: "SQL (Structured Query Language) is the standard domain-specific language used for managing, querying, and manipulating data stored in a relational database management system (RDBMS)." },
+                    { name: "Python", description: "Python is a high-level, interpreted, general-purpose programming language known for its clear syntax and extensive libraries, making it ideal for data analysis, web development, and automation." },
+                    { name: "Power BI", description: "Power BI is a business intelligence tool used for connecting, transforming, and modeling data from various sources to create dynamic, interactive dashboards and visual reports." },
+                    { name: "Power Query", description: "Power Query is an ETL (Extract, Transform, Load) engine used in tools like Power BI and Excel to connect to, clean, and shape raw data from various sources using a powerful, user-friendly graphical interface and the M language." },
+                ],
+                image: "Projects/Telo Churn/Images/Power BI.JPG",
+                secondaryImages: [
+                    "Projects/Telo Churn/Images/6.jpeg",
+                    "Projects/Telo Churn/Images/2.jpeg",
+                    "Projects/Telo Churn/Images/14.jpeg",
+                    "Projects/Telo Churn/Images/Python one.jpeg",
+                    "Projects/Telo Churn/Images/Python Two.jpeg",
+                    "Projects/Telo Churn/Images/Python Three.jpeg"
+                ],
+                // video: "Projects/Telo Churn/Images/Telco Customer Churn.mp4",
+                githubLink: "https://github.com/2002kareem/Telo-Churn.git"
+            }
+        };
+
+        function loadProjectDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+            const project = projects[projectId];
+
+            if (project) {
+                document.getElementById('project-title').innerHTML = project.title;
+                document.getElementById('project-description').innerHTML = project.description;
+                document.getElementById('project-image').src = project.image;
+
+                const secondaryImagesContainer = document.getElementById('secondary-images-container');
+                secondaryImagesContainer.innerHTML = '';
+                project.secondaryImages.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = "Project detail image";
+                    img.className = "rounded-lg w-full h-auto object-cover";
+                    secondaryImagesContainer.appendChild(img);
+                });
+
+                const toolsSection = document.getElementById('tools-section');
+                const toolsContainer = document.getElementById('project-tools');
+                toolsContainer.innerHTML = '';
+                if (project.tools && project.tools.length > 0) {
+                    toolsSection.style.display = 'block';
+                    project.tools.forEach(tool => {
+                        const toolPill = document.createElement('span');
+                        toolPill.textContent = tool.name;
+                        toolPill.className = "bg-[#7AE2CF] text-[#06202B] text-sm font-semibold px-4 py-2 rounded-full shadow-md cursor-pointer hover:scale-105 transition-transform duration-200";
+                        toolPill.onclick = () => showToolModal(tool.name, tool.description);
+                        toolsContainer.appendChild(toolPill);
+                    });
+                } else {
+                    toolsSection.style.display = 'none';
+                }
+
+                const videoElement = document.getElementById('project-video');
+                if (project.video) {
+                    videoElement.src = project.video;
+                    document.getElementById('video-container').style.display = 'block';
+                } else {
+                    document.getElementById('video-container').style.display = 'none';
+                }
+
+                const projectButtonsContainer = document.getElementById('project-buttons');
+                projectButtonsContainer.innerHTML = '';
+
+                if (project.githubLink) {
+                    const githubButton = document.createElement('a');
+                    githubButton.href = project.githubLink;
+                    githubButton.target = "_blank";
+                    githubButton.className = "inline-flex items-center px-6 py-2 border-2 border-[#7AE2CF] text-[#7AE2CF] rounded-full font-semibold hover:bg-[#7AE2CF] hover:text-[#06202B] transition-colors";
+                    githubButton.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.803 8.207 11.387.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.332-1.758-1.332-1.758-1.088-.745.083-.73.083-.73 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.809 1.305 3.493.998.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.334-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.124-.304-.535-1.524.117-3.18 0 0 1.008-.323 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.29-1.553 3.297-1.23 3.297-1.23.653 1.656.242 2.876.118 3.18.77.84 1.233 1.91 1.233 3.22 0 4.596-2.805 5.62-5.474 5.92-.416.36-.788 1.07-.788 2.164 0 1.56.0-2.816 0 2.26.115.823.754 1.66 1.724 1.768C19.562 21.84 24 17.34 24 12c0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View on GitHub
+                    `;
+                    projectButtonsContainer.appendChild(githubButton);
+                }
+
+            } else {
+                document.getElementById('project-details-section').innerHTML = "<h2 class='text-center text-4xl text-red-500'>Project not found!</h2>";
+            }
+        }
+
+        const modal = document.getElementById('tool-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const closeModalButton = document.getElementById('close-modal');
+
+        function showToolModal(name, description) {
+            modalTitle.textContent = name;
+            modalDescription.textContent = description;
+            modal.style.display = 'flex';
+        }
+
+        closeModalButton.onclick = () => {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+
+        window.onload = loadProjectDetails;
+    </script>
+</body>
+
+</html>
